@@ -39,7 +39,7 @@ const Header = () => {
                     </li>
                     <li>
                       <button
-                        className="p-2 rounded-lg border border-sky-400 hover:ring-1 ring-sky-400 hover:bg-sky-300/10 active:bg-sky-300/30"
+                        className="px-2 py-1 rounded-lg border border-sky-400 hover:ring-1 ring-sky-400 hover:bg-sky-300/10 active:bg-sky-300/30 flex"
                         onClick={() => setModal(true)}
                       >
                         Захиалга

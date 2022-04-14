@@ -33,3 +33,4 @@ yarn-error.log*
 
 #me 
 yarn.lock
+.env

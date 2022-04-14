@@ -1,25 +1,55 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-
+import { Fragment, useState } from "react";
+import { Dialog, Transition, Listbox } from "@headlessui/react";
+import Input from "@components/common/input";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 const ReservationModal = ({ open, close }) => {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [state, setState] = useState({
+    type: "Энгийн",
+  });
+
+  const tables = ["Энгийн", "VIP", "Террас"];
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    axios
+      .post(process.env.NEXT_PUBLIC_API + "/reservations", {
+        type: state.type,
+        time: state.time,
+        phone: Number(state.phone),
+        seats: Number(state.seats),
+      })
+      .then(({ data }) => {
+        toast.success("Амжилттай", {
+          onClose: () => close(),
+        });
+        return router.push(`/reservation/${data._id}`);
+      })
+      .catch(() => toast.warn("Хүсэлт амжилтгүй"))
+      .finally(() => setLoading(false));
+  };
   return (
     <Transition appear show={open} as={Fragment}>
       <Dialog
         as="div"
-        className="fixed inset-0 z-10 overflow-y-auto"
+        className="fixed inset-0 z-50 overflow-y-auto"
         onClose={close}
       >
         <div className="min-h-screen px-4 text-center">
           <Transition.Child
             as={Fragment}
-            enter="ease-out duration-300"
+            enter="ease-out duration-100"
             enterFrom="opacity-0"
             enterTo="opacity-100"
-            leave="ease-in duration-200"
+            leave="ease-in duration-100"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0" />
+            <Dialog.Overlay className="fixed inset-0 bg-black-300/10 backdrop-blur-lg" />
           </Transition.Child>
           <span
             className="inline-block h-screen align-middle"
@@ -41,24 +71,84 @@ const ReservationModal = ({ open, close }) => {
                 as="h3"
                 className="text-lg font-medium leading-6 text-gray-900"
               >
-                Payment successful
+                Ширээний захиалга
               </Dialog.Title>
-              <div className="mt-2">
+              <div className="border-t my-2" />
+              <div>
                 <p className="text-sm text-gray-500">
-                  Your payment has been successfully submitted. We’ve sent you
-                  an email with all of the details of your order.
+                  Та ширээний захиалга өгөх цаг, хүний тоогоо оруулна уу.
+                  захиалга баталгаажсан мэдээлэлийг утасны дугаараар мэдэгдэнэ.
                 </p>
               </div>
-
-              <div className="mt-4">
+              <div className="border-t my-2" />
+              <form
+                className="flex flex-col gap-y-2 text-black"
+                onSubmit={onSubmit}
+                autoComplete="off"
+              >
+                <Input
+                  placeholder="Утасны дугаар"
+                  label="Утасны дугаар"
+                  type="number"
+                  name="phone"
+                  required
+                  onChange={(e) =>
+                    setState({ ...state, [e.target.name]: e.target.value })
+                  }
+                />
+                <div className="relative">
+                  <span className="flex mb-1 text-gray-500 text-xs px-0.5">
+                    Ширээний төрөл
+                  </span>
+                  <Listbox
+                    value={state.type}
+                    onChange={(table) => setState({ ...state, type: table })}
+                  >
+                    <Listbox.Button className="rounded-lg h-12 border w-full px-3 py-2 flex items-center">
+                      {state.type}
+                    </Listbox.Button>
+                    <Listbox.Options className="absolute rounded-md bg-white w-full shadow-lg py-2">
+                      {tables.map((table, index) => (
+                        <Listbox.Option
+                          key={index}
+                          value={table}
+                          disabled={false}
+                          className="my-1 hover:bg-black/10 cursor-pointer mx-2 rounded px-1 h-8 flex items-center"
+                        >
+                          {table}
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </Listbox>
+                </div>
+                <Input
+                  label="Хүний тоо"
+                  placeholder="Хүний тоо"
+                  required
+                  name="seats"
+                  type="number"
+                  onChange={(e) =>
+                    setState({ ...state, [e.target.name]: e.target.value })
+                  }
+                />
+                <Input
+                  name="time"
+                  placeholder="Цаг"
+                  label="Цаг"
+                  type="time"
+                  onChange={(e) =>
+                    setState({ ...state, [e.target.name]: e.target.value })
+                  }
+                />
+                <div className="border-t my-2" />
                 <button
-                  type="button"
-                  className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                  onClick={close}
+                  type="submit"
+                  className="inline-flex justify-center px-4 py-2 text-sm font-medium bg-blue-900 text-white border border-transparent rounded-md hover:bg-blue-900/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 uppercase"
+                  disabled={loading}
                 >
-                  Got it, thanks!
+                  Захиалга өгөх
                 </button>
-              </div>
+              </form>
             </div>
           </Transition.Child>
         </div>
