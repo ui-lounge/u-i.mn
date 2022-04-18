@@ -115,7 +115,17 @@ const ReservationModal = ({ open, close }) => {
                           disabled={false}
                           className="my-1 hover:bg-black/10 cursor-pointer mx-2 rounded px-1 h-8 flex items-center"
                         >
-                          {table}
+                          {({ selected }) => (
+                            <>
+                              <span
+                                className={`block truncate ${
+                                  selected ? "font-medium" : "font-normal"
+                                }`}
+                              >
+                                {table}
+                              </span>
+                            </>
+                          )}
                         </Listbox.Option>
                       ))}
                     </Listbox.Options>
