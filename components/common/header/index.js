@@ -9,7 +9,7 @@ const Header = () => {
   const [modal, setModal] = useState(false);
   return (
     <>
-      <header className="sticky top-0 z-40 w-full backdrop-blur border-b border-slate-50/[0.06] bg-slate-900/75">
+      <header className="sticky top-0 z-40 w-full backdrop-blur border-b border-slate-50/[0.06] bg-black/10">
         <div className="max-w-8xl mx-auto">
           <div className="py-4 lg:px-8 lg:border-0 mx-4 lg:mx-0">
             <div className="flex items-center">
@@ -24,22 +24,22 @@ const Header = () => {
                   <ul className="flex space-x-8 items-center">
                     <li>
                       <Link href="/menu">
-                        <a className="hover:text-sky-400">Mэню</a>
+                        <a className="hover:text-brand-primary">Mэню</a>
                       </Link>
                     </li>
                     <li>
                       <Link href="/new">
-                        <a className="hover:text-sky-400">Mэдээ</a>
+                        <a className="hover:text-brand-primary">Mэдээ</a>
                       </Link>
                     </li>
                     <li>
                       <Link href="/contact">
-                        <a className="hover:text-sky-400">Холбоо барих</a>
+                        <a className="hover:text-brand-primary">Холбоо барих</a>
                       </Link>
                     </li>
                     <li>
                       <button
-                        className="px-2 py-1 rounded-lg border border-sky-400 hover:ring-1 ring-sky-400 hover:bg-sky-300/10 active:bg-sky-300/30 flex"
+                        className="px-2 py-1 rounded-lg border border-brand-primary hover:ring-1 ring-brand-primary hover:bg-brand-primary-primary/10 active:bg-brand-primary-primary/30 flex"
                         onClick={() => setModal(true)}
                       >
                         Захиалга
@@ -55,7 +55,7 @@ const Header = () => {
                           target="_blank"
                           rel="noreferrer"
                           aria-label="facebook"
-                          className="hover:text-sky-400 p-1 sm:p-0 block"
+                          className="hover:text-brand-primary p-1 sm:p-0 block"
                         >
                           <span className="sr-only">Facebook</span>
                           <FaFacebook className="h-6 w-6 sm:h-4 sm:w-4" />
@@ -68,7 +68,7 @@ const Header = () => {
                           target="_blank"
                           rel="noreferrer"
                           aria-label="instagram"
-                          className="hover:text-sky-400 p-1 sm:p-0 block"
+                          className="hover:text-brand-primary p-1 sm:p-0 block"
                         >
                           <span className="sr-only">Instagram</span>
                           <FaInstagram className="h-6 w-6 sm:h-4 sm:w-4" />
@@ -76,7 +76,7 @@ const Header = () => {
                       </Link>
                     </li>
                     <li>
-                      <button className="hover:text-sky-400 block sm:hidden p-1">
+                      <button className="hover:text-brand-primary block sm:hidden p-1">
                         <HiMenuAlt3 className="w-6 h-6" />
                       </button>
                     </li>

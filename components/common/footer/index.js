@@ -6,12 +6,15 @@ const Footer = () => {
       <div className="py-10 border-t sm:flex justify-between text-slate-500 border-slate-200/5 max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="mb-6 sm:mb-0 sm:flex">
           <p>© {new Date().getFullYear()} АБЕ ЭНД АА ХХК</p>
-          <div className="sm:ml-4 sm:pl-4 sm:border-l sm:border-slate-200/5 text-xs flex items-center">
-            <Link href="/">
-              <a target="_blank" rel="noreferrer" aria-label="facebook">
+          <div className="sm:ml-4 sm:pl-4 sm:border-l sm:border-slate-200/5 text-xs flex flex-col justify-center items-start">
+            <Link href="/" passHref>
+              <a target="_blank" rel="noreferrer" className="hover:underline">
                 Улаанбаатар БЗД 26-р хороо Encanto Tower A Block 19 давхар
               </a>
             </Link>
+            <a href="tel:77883034" className="hover:underline">
+              +976 77883034
+            </a>
           </div>
         </div>
         <div className="flex space-x-4 text-slate-500 items-center">

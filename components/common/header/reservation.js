@@ -153,7 +153,7 @@ const ReservationModal = ({ open, close }) => {
                 <div className="border-t my-2" />
                 <button
                   type="submit"
-                  className="inline-flex justify-center px-4 py-2 text-sm font-medium bg-blue-900 text-white border border-transparent rounded-md hover:bg-blue-900/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 uppercase"
+                  className="inline-flex justify-center px-4 py-2 text-sm bg-yellow-500 font-bold border border-transparent rounded-md hover:bg-brand-primary-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary uppercase"
                   disabled={loading}
                 >
                   Захиалга өгөх

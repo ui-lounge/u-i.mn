@@ -1,4 +1,4 @@
 @import url("~react-toastify/dist/ReactToastify.css");
 body{
-   @apply antialiased text-slate-400 bg-slate-900
+   @apply antialiased text-slate-400 bg-black
 }
