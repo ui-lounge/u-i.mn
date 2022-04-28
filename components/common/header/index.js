@@ -22,7 +22,7 @@ const Header = () => {
               <div className="ml-auto flex items-center">
                 <nav className="text-sm leading-6 font-semibold text-slate-200 hidden md:flex">
                   <ul className="flex space-x-8 items-center">
-                    <li>
+                    {/* <li>
                       <Link href="/menu">
                         <a className="hover:text-brand-primary">Mэню</a>
                       </Link>
@@ -31,7 +31,7 @@ const Header = () => {
                       <Link href="/new">
                         <a className="hover:text-brand-primary">Mэдээ</a>
                       </Link>
-                    </li>
+                    </li>*/}
                     <li>
                       <Link href="/contact">
                         <a className="hover:text-brand-primary">Холбоо барих</a>

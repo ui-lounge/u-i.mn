@@ -5,9 +5,12 @@ const Footer = () => {
     <footer className="mt-16">
       <div className="py-10 border-t sm:flex justify-between text-slate-500 border-slate-200/5 max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="mb-6 sm:mb-0 sm:flex">
-          <p>© {new Date().getFullYear()} АБЕ ЭНД АА ХХК</p>
+          <p className="text-sm">© {new Date().getFullYear()} UI Lounge</p>
           <div className="sm:ml-4 sm:pl-4 sm:border-l sm:border-slate-200/5 text-xs flex flex-col justify-center items-start">
-            <Link href="/" passHref>
+            <Link
+              href="https://maps.google.com/maps/dir/UI+Lounge+%26+Restaurant+Bayanzurkh,+Encanto+Tower+19th+Floor+13312/@47.9033317,106.9295069,18z/data=!4m5!4m4!1m0!1m2!1m1!1s0x5d969345025e10fd:0xf0340fd97ca54a44"
+              passHref
+            >
               <a target="_blank" rel="noreferrer" className="hover:underline">
                 Улаанбаатар БЗД 26-р хороо Encanto Tower A Block 19 давхар
               </a>
