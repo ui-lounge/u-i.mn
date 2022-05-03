@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import "swiper/css/bundle";
 export async function getStaticProps() {
-  const { data } = await axios.get(process.env.NEXT_PUBLIC_API + "/homes");
+  const { data } = await axios.get(process.env.NEXT_PUBLIC_API + "/images");
   const images = data.filter(({ type }) => type === "home");
   return {
     props: {
@@ -45,7 +45,7 @@ const Page = ({ images }) => {
           UI лоунж & ресторан тавтай морил
         </h1>
         <p>
-          Mанай ресторан нь нийт 240 хүн зэрэг хүлээн авах багтаамжтай
+          Mанай ресторан нь нийт 180 хүн зэрэг хүлээн авах багтаамжтай
           Улаанбаатарын үдшийг 20 давхраас тольдон харж үдшийг тансаг сайхан
           орчинд өнгөрүүлэх боломжийг бид олгож байна.
         </p>
