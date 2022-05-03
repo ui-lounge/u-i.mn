@@ -9,9 +9,7 @@ const Layout = ({ children }) => {
         <title>UI Lounge &amp; Restaurant</title>
       </Head>
       <Header />
-      <main className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 min-h-screen">
-        {children}
-      </main>
+      <main className="max-w-8xl mx-auto">{children}</main>
       <Footer />
       <ToastContainer />
     </>

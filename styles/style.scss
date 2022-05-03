@@ -1,0 +1,12 @@
+.home{
+    .swiper-pagination-bullet{
+        height: 10px;
+        width: 10px;
+        background: #fff;
+        opacity: .2;
+        border-radius: 0px;
+        &.swiper-pagination-bullet-active{
+            opacity: .8;
+        }
+    }
+}

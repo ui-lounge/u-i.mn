@@ -8,6 +8,9 @@ module.exports = {
       width: {
         800: "800px",
       },
+      aspectRatio: {
+        image: "2.8 / 4",
+      },
       colors: {
         brand: {
           primary: "#EAD681",

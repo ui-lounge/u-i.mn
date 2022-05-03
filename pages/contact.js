@@ -1,8 +1,8 @@
 const Page = () => {
   return (
-    <div className="flex items-center flex-col">
-      <div className="mb-12">
-        <h1 className="text-lg font-bold uppercase">Mанай хаяг</h1>
+    <div className="flex items-center flex-col my-12 px-4">
+      <div className="my-12">
+        <h1 className="text-sm sm:text-lg font-bold uppercase">Mанай хаяг</h1>
         <span>Улаанбаатар БЗД 26-р хороо Encanto Tower A Block 19 давхар</span>
         <a href="tel:77883034" className="text-white ml-2">
           +976 77883034

@@ -23,11 +23,12 @@ const ReservationModal = ({ open, close }) => {
         phone: Number(state.phone),
         seats: Number(state.seats),
       })
-      .then(({ data }) => {
+      .then(() => {
         toast.success("Амжилттай", {
           onClose: () => close(),
         });
-        return router.push(`/reservation/${data._id}`);
+        return close();
+        // return router.push(`/reservation/${data._id}`);
       })
       .catch(() => toast.warn("Хүсэлт амжилтгүй"))
       .finally(() => setLoading(false));
@@ -37,7 +38,7 @@ const ReservationModal = ({ open, close }) => {
       <Dialog
         as="div"
         className="fixed inset-0 z-50 overflow-y-auto"
-        onClose={close}
+        onClose={!loading ? close : () => toast.warn("Түр хүлээнэ үү.")}
       >
         <div className="min-h-screen px-4 text-center">
           <Transition.Child
@@ -153,7 +154,7 @@ const ReservationModal = ({ open, close }) => {
                 <div className="border-t my-2" />
                 <button
                   type="submit"
-                  className="inline-flex justify-center px-4 py-2 text-sm bg-yellow-500 font-bold border border-transparent rounded-md hover:bg-brand-primary-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary uppercase"
+                  className="inline-flex justify-center px-4 py-2 text-sm bg-yellow-500 font-bold border border-transparent rounded-md hover:bg-brand-primary-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary uppercase disabled:bg-gray-400 disabled:text-gray-300"
                   disabled={loading}
                 >
                   Захиалга өгөх

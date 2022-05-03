@@ -2,9 +2,9 @@ import Link from "next/link";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 const Footer = () => {
   return (
-    <footer className="mt-16">
-      <div className="py-10 border-t sm:flex justify-between text-slate-500 border-slate-200/5 max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-        <div className="mb-6 sm:mb-0 sm:flex">
+    <footer className="mt-4">
+      <div className="py-6 border-t sm:flex justify-between text-slate-500 border-slate-200/5 max-w-8xl mx-auto px-4 md:px-6">
+        <div className="sm:flex">
           <p className="text-sm">© {new Date().getFullYear()} UI Lounge</p>
           <div className="sm:ml-4 sm:pl-4 sm:border-l sm:border-slate-200/5 text-xs flex flex-col justify-center items-start">
             <Link
@@ -20,7 +20,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="flex space-x-4 text-slate-500 items-center">
+        <div className="hidden sm:flex space-x-4 text-slate-500 items-center">
           <Link href="https://facebook.com/ui.lounge" passHref>
             <a
               target="_blank"
@@ -44,6 +44,24 @@ const Footer = () => {
             </a>
           </Link>
         </div>
+        <ul className="flex sm:hidden flex-col text-xs mt-2 space-y-2">
+          <li>
+            <Link href="https://forms.gle/pRo4e9yoRVCm9FpQ6" passHref>
+              <a
+                className="hover:text-brand-primary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ажлын байр
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact">
+              <a className="hover:text-brand-primary">Холбоо барих</a>
+            </Link>
+          </li>
+        </ul>
       </div>
     </footer>
   );
