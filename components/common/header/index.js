@@ -15,7 +15,7 @@ const Header = () => {
             <div className="flex items-center">
               <Link href="/">
                 <a className="text-sm text-white items-center flex">
-                  <Image src={Logo} height={24} width={24} />
+                  <Image src={Logo} height={24} width={24} alt="Logo" />
                   <span className="ml-2">UI Lounge</span>
                 </a>
               </Link>

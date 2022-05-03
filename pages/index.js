@@ -35,7 +35,10 @@ const Page = ({ images }) => {
             <Image
               src={process.env.NEXT_PUBLIC_API + image.Image.url}
               layout="fill"
+              alt={image.Name}
+              placeholder="blur"
               objectFit="cover"
+              blurDataURL={image.Image.formats.thumbnail.url}
             />
           </SwiperSlide>
         ))}
@@ -52,16 +55,36 @@ const Page = ({ images }) => {
       </section>
       <div className="grid gap-4 grid-cols-2 max-w-7xl mx-auto px-4">
         <div className="w-full aspect-image relative">
-          <Image src="/images/food.jpg" layout="fill" className="rounded" />
+          <Image
+            src="/images/food.jpg"
+            layout="fill"
+            className="rounded"
+            alt="Foods"
+          />
         </div>
         <div className="w-full aspect-image relative">
-          <Image src="/images/drinks.jpg" layout="fill" className="rounded" />
+          <Image
+            src="/images/drinks.jpg"
+            layout="fill"
+            className="rounded"
+            alt="Drinks"
+          />
         </div>
         <div className="w-full aspect-image relative">
-          <Image src="/images/hall.jpg" layout="fill" className="rounded" />
+          <Image
+            src="/images/hall.jpg"
+            layout="fill"
+            className="rounded"
+            alt="Hall"
+          />
         </div>
         <div className="w-full aspect-image relative">
-          <Image src="/images/theque.jpg" layout="fill" className="rounded" />
+          <Image
+            src="/images/theque.jpg"
+            layout="fill"
+            className="rounded"
+            alt="Theque"
+          />
         </div>
       </div>
     </div>
