@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import "swiper/css/bundle";
 export async function getStaticProps() {
-  const { data } = await axios.get(process.env.NEXT_PUBLIC_API + "/images");
+  const { data } = await axios.get(process.env.NEXT_PUBLIC_API + "/homes");
   const images = data.filter(({ type }) => type === "home");
   return {
     props: {
