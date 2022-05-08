@@ -17,15 +17,14 @@ const Page = () => {
           content="UI Lounge & Restaurant Menu"
           key="ogdesc"
         />
-        <meta property="og:image" content="/menu/001.png" />
+        <meta property="og:image" content="https://www.u-i.mn/menu/001.png" />
       </Head>
       <main className="mt-12 relative flex flex-col items-center">
         {[...new Array(5)].map((_, index) => {
           let order = index.toString().padStart(3, "0");
           return (
-            <div>
+            <div key={index}>
               <Image
-                key={index}
                 src={`/menu/${order}.png`}
                 width="500px"
                 height="1088px"
