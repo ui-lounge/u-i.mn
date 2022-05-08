@@ -61,6 +61,11 @@ const Footer = () => {
               <a className="hover:text-brand-primary">Холбоо барих</a>
             </Link>
           </li>
+          <li>
+            <Link href="/menu">
+              <a className="hover:text-brand-primary">Mэню</a>
+            </Link>
+          </li>
         </ul>
       </div>
     </footer>

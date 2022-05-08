@@ -6,7 +6,7 @@ const Page = () => {
         let order = index.toString().padStart(3, "0");
         return (
           <div>
-            <Image src={`/menu/${order}.png`} width="500px" height="1100px" />
+            <Image src={`/menu/${order}.png`} width="500px" height="1088px" />
           </div>
         );
       })}
