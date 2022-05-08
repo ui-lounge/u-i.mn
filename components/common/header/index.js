@@ -23,6 +23,11 @@ const Header = () => {
                 <nav className="text-sm leading-6 font-semibold text-slate-200 hidden md:flex">
                   <ul className="flex space-x-8 items-center">
                     <li>
+                      <Link href="/menu">
+                        <a className="hover:text-brand-primary">Mэню</a>
+                      </Link>
+                    </li>
+                    <li>
                       <Link href="https://forms.gle/pRo4e9yoRVCm9FpQ6" passHref>
                         <a
                           className="hover:text-brand-primary"
