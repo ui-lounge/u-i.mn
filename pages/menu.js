@@ -20,7 +20,7 @@ const Page = () => {
         <meta property="og:image" content="https://www.u-i.mn/menu/001.png" />
       </Head>
       <main className="mt-12 relative flex flex-col items-center">
-        {[...new Array(5)].map((_, index) => {
+        {[...new Array(27)].map((_, index) => {
           let order = index.toString().padStart(3, "0");
           return (
             <div key={index}>
@@ -28,6 +28,7 @@ const Page = () => {
                 src={`/menu/${order}.png`}
                 width="500px"
                 height="1088px"
+                quality={100}
                 alt={`Menu Page ${order}`}
               />
             </div>
