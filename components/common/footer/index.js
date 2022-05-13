@@ -63,7 +63,7 @@ const Footer = () => {
           </li>
           <li>
             <Link href="/menu">
-              <a className="hover:text-brand-primary">Mэню</a>
+              <a className="hover:text-brand-primary">Mеню</a>
             </Link>
           </li>
         </ul>

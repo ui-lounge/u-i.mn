@@ -9,9 +9,9 @@ const Header = () => {
   const [modal, setModal] = useState(false);
   return (
     <>
-      <header className="fixed top-0 z-40 w-full backdrop-blur border-b border-slate-50/[0.06] bg-black/15">
+      <header className="fixed top-0 z-40 w-full backdrop-blur border-b border-slate-50/[0.06] bg-black/60">
         <div className="max-w-8xl mx-auto">
-          <div className="py-4 lg:px-8 lg:border-0 mx-4 lg:mx-0">
+          <div className="py-2 sm:py-4 lg:px-8 lg:border-0 mx-4 lg:mx-0">
             <div className="flex items-center">
               <Link href="/">
                 <a className="text-sm text-white items-center flex">
@@ -24,7 +24,7 @@ const Header = () => {
                   <ul className="flex space-x-8 items-center">
                     <li>
                       <Link href="/menu">
-                        <a className="hover:text-brand-primary">Mэню</a>
+                        <a className="hover:text-brand-primary">Mеню</a>
                       </Link>
                     </li>
                     <li>
