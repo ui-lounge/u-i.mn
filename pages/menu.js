@@ -1,7 +1,7 @@
 import Head from "next/head";
 import axios from "axios";
 import Image from "next/image";
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const { data: menus } = await axios.get(
       process.env.NEXT_PUBLIC_API + "/menus?_limit=500"
