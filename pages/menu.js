@@ -73,9 +73,10 @@ const Page = ({ data }) => {
                       item.shot ? "grid-cols-5" : "grid-cols-4"
                     }`}
                   >
-                    <span className="font-bold col-span-3">
+                    {/* <span className="font-bold col-span-3">
                       {item.number}. {item.name}
-                    </span>
+                    </span> */}
+                    <span className="font-bold col-span-3">{item.name}</span>
                     <div
                       className={`${
                         item.shot ? "col-span-2" : "col-span-1"
