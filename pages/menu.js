@@ -14,7 +14,9 @@ export async function getServerSideProps() {
       data.push({
         ...item,
         items:
-          menus.filter(({ category }) => category._id === item._id) || false,
+          menus
+            .filter(({ category }) => category._id === item._id)
+            .sort((a, b) => a.name.localeCompare(b.name)) || false,
       })
     );
     data = data.sort((a, b) => a.number - b.number);
